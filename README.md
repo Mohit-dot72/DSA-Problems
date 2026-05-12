@@ -18,7 +18,6 @@ All solutions are written in clean and easy-to-understand C++ code.
 
 - C++
 
----
 
 
 
