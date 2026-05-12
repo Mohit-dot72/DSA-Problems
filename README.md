@@ -20,12 +20,5 @@ All solutions are written in clean and easy-to-understand C++ code.
 
 ---
 
-## 📂 Repository Structure
 
-```bash
-LeetCode-DSA/
-│
-├── Easy/
-├── Medium/
-├── Hard/
-└── README.md
+
