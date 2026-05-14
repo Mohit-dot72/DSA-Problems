@@ -1,0 +1,26 @@
+class Solution {
+public:
+    bool isPalindrome(string s) {
+        int n = s.size();
+        int x = 0;
+        int y = n-1;
+
+        while(x<y){
+            if(!isalnum(s[x])){
+                x++;
+            }
+            else if(!isalnum(s[y])){
+                    y--; 
+            }
+            else if(tolower(s[x]) != tolower(s[y])){
+                return false;
+            }
+            else{
+                x++;
+                y--;
+            }
+            
+        }
+        return true;
+    }
+};
