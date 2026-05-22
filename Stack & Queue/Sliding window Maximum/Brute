@@ -1,0 +1,16 @@
+class Solution {
+public:
+    vector<int> maxSlidingWindow(vector<int>& nums, int k) {
+        int n = nums.size();
+        vector<int> ans;
+        for(int i=0;i<=n-k;i++){
+            int r = i+k;
+            int maxval = nums[i];
+            for(int j=i;j<r;j++){
+                maxval = max(maxval,nums[j]);
+            }
+            ans.push_back(maxval);
+        }
+        return ans;
+    }
+};
