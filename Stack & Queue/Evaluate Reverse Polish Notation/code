@@ -1,0 +1,42 @@
+class Solution {
+public:
+    int solve(stack<int>& st,char ch){
+        int num1 = st.top();
+        st.pop();
+        int num2 = st.top();
+        st.pop();
+        int ans;
+        if(ch == '+'){ 
+            ans  = num2 + num1;
+        } else 
+        if(ch == '-'){
+             ans = num2 - num1;
+        }else
+        if(ch == '*'){
+            ans = num2 * num1;
+        } else
+        if(ch == '/'){
+            ans = num2 / num1;
+        }
+        return ans;
+    }
+    int evalRPN(vector<string>& tokens) {
+        int n = tokens.size();
+        stack<int> st;
+        int i = 0;
+        while(i<n){
+            if(tokens[i] == "+" ||
+            tokens[i] == "-" ||
+            tokens[i] == "*" ||
+            tokens[i] == "/" ){
+                int ans = solve(st,tokens[i][0]);
+                st.push(ans);
+            } else{
+                int num = stoi(tokens[i]);
+                st.push(num);
+            }
+            i++;
+        }
+        return st.top();
+    }
+};
