@@ -1,0 +1,31 @@
+class Solution {
+public:
+    vector<string> ans;
+    void solve(string digits,int i,vector<string>& mp ,string s){
+        if(i == digits.size()){
+            ans.push_back(s);
+            return;
+        }
+
+        string letter = mp[digits[i] - '0'];
+
+        for(auto ch:letter){
+            s.push_back(ch);
+            solve(digits,i+1,mp,s);
+            s.pop_back();
+        }
+    }
+    vector<string> letterCombinations(string digits) {
+        if(digits.empty()) return {};
+
+        vector<string> mp = {
+            "","",   "abc",  "def",
+            "ghi",   "jkl",  "mno",
+            "pqrs",  "tuv",  "wxyz"
+        };
+
+        string s = "";
+        solve(digits,0,mp,s);
+        return ans;
+    }
+};
