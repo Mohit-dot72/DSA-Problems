@@ -1,4 +1,4 @@
-# LeetCode DSA Solutions 🚀
+# LeetCode DSA Solutions 
 
 Welcome to my LeetCode DSA repository.  
 This repository contains solutions to various Data Structures and Algorithms problems from LeetCode using C++.
@@ -14,7 +14,7 @@ All solutions are written in clean and easy-to-understand C++ code.
 
 ---
 
-## 🛠 Language Used
+##  Language Used
 
 - C++
 
