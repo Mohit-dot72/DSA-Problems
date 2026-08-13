@@ -1,0 +1,30 @@
+class Solution {
+public:
+    int dfs(vector<vector<int>>& grid, int r,int c){
+        int row = grid.size();
+        int col = grid[0].size();
+
+        if(r < 0||r >= row||c < 0|| c >= col || grid[r][c] == 0){
+            return 0;
+        }
+        
+        grid[r][c] = 0;
+        int cnt = 1;
+        cnt += dfs(grid, r+1, c);
+        cnt += dfs(grid, r-1, c);
+        cnt += dfs(grid, r, c+1);
+        cnt += dfs(grid, r, c-1);
+        return cnt;
+    }
+    int maxAreaOfIsland(vector<vector<int>>& grid) {
+        int maxCount = 0;
+        for(int i=0;i<grid.size();i++){
+            for(int j=0;j<grid[0].size();j++){
+                if(grid[i][j] == 1){
+                   maxCount = max(maxCount, dfs(grid,i,j));
+                }
+            }
+        }
+        return maxCount;
+    }
+};
